@@ -10,6 +10,41 @@ body {
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'F1';
+    src: url('fonts/F1.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'F2';
+    src: url('fonts/F2.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'F3';
+    src: url('fonts/F3.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'F4';
+    src: url('fonts/F4.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'F5';
+    src: url('fonts/F5.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'F6';
+    src: url('fonts/F6.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'F7';
+    src: url('fonts/F7.otf') format('opentype');
+}
+
 .container {
     background-color: #fff;
     padding: 20px;
