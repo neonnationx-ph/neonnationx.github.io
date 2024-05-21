@@ -7,23 +7,28 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Font Previewer</h1>
-        <textarea id="inputText" placeholder="Enter your text here..."></textarea>
-        <div class="controls">
-            <label for="fontSelect">Choose Font:</label>
-            <select id="fontSelect">
-                <option value="font1">Font 1</option>
-                <option value="font2">Font 2</option>
-                <option value="font3">Font 3</option>
-            </select>
-            <label for="fontSize">Font Size:</label>
-            <input type="number" id="fontSize" value="16">
-            <label for="fontColor">Font Color:</label>
-            <input type="color" id="fontColor" value="#000000">
+    <div class="controls">
+        <div class="font-buttons">
+            <button class="font-button" data-font="F1">F1</button>
+            <button class="font-button" data-font="F2">F2</button>
+            <!-- Add buttons for all fonts -->
+            <button class="font-button" data-font="F18">F18</button>
         </div>
-        <div id="preview" class="preview"></div>
+        <label for="fontSize">Font Size:</label>
+        <input type="number" id="fontSize" value="16">
+        <div class="color-buttons">
+            <button class="color-button" data-color="#FF0000">Red</button>
+            <button class="color-button" data-color="#00FF00">Green</button>
+            <button class="color-button" data-color="#0000FF">Blue</button>
+            <button class="color-button" data-color="#87CEEB">Sky Blue</button>
+            <button class="color-button" data-color="#FF69B4">Pink</button>
+            <button class="color-button" data-color="#FFFFFF">White</button>
+            <button class="color-button" data-color="#FDF5E6">Warm White</button>
+            <button class="color-button" data-color="#FFD700">Golden Yellow</button>
+            <button class="color-button" data-color="#FFA500">Orange</button>
+        </div>
     </div>
+    <div id="preview" class="preview">Your Text Here</div>
     <script src="script.js"></script>
 </body>
 </html>
