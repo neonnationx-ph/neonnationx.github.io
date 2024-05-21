@@ -1,34 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Font Previewer</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neon Text Preview</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="controls">
-        <div class="font-buttons">
-            <button class="font-button" data-font="F1">F1</button>
-            <button class="font-button" data-font="F2">F2</button>
-            <!-- Add buttons for all fonts -->
-            <button class="font-button" data-font="F18">F18</button>
+  <div class="container">
+    <h1>Neon Text Preview</h1>
+    <div class="options">
+      <div class="option">
+        <label>Text:</label>
+        <div id="textInputs"></div>
+      </div>
+      <div class="option">
+        <label>Font:</label>
+        <select id="font">
+          <option value="Arial">Arial</option>
+          <option value="Times New Roman">Times New Roman</option>
+          <option value="Verdana">Verdana</option>
+          <!-- Add more font options as needed -->
+        </select>
+      </div>
+      <div class="option">
+        <label>Size:</label>
+        <select id="size">
+          <option value="16">16px</option>
+          <option value="24">24px</option>
+          <option value="32" selected>32px</option>
+          <option value="48">48px</option>
+          <option value="64">64px</option>
+          <option value="96">96px</option>
+        </select>
+      </div>
+      <div class="option">
+        <label>Color:</label>
+        <div class="color-options">
+          <input type="radio" id="colorBlue" name="color" value="#0000ff">
+          <label for="colorBlue" class="color-label blue"></label>
+          <input type="radio" id="colorRed" name="color" value="#ff0000" checked>
+          <label for="colorRed" class="color-label red"></label>
+          <input type="radio" id="colorSkyBlue" name="color" value="#87ceeb">
+          <label for="colorSkyBlue" class="color-label sky-blue"></label>
+          <input type="radio" id="colorGreen" name="color" value="#008000">
+          <label for="colorGreen" class="color-label green"></label>
+          <input type="radio" id="colorPink" name="color" value="#ffc0cb">
+          <label for="colorPink" class="color-label pink"></label>
+          <input type="radio" id="colorYellow" name="color" value="#ffff00">
+          <label for="colorYellow" class="color-label yellow"></label>
+          <input type="radio" id="colorGoldenYellow" name="color" value="#ffdf00">
+          <label for="colorGoldenYellow" class="color-label golden-yellow"></label>
+          <input type="radio" id="colorWhite" name="color" value="#ffffff">
+          <label for="colorWhite" class="color-label white"></label>
+          <input type="radio" id="colorWarmWhite" name="color" value="#fff1e0">
+          <label for="colorWarmWhite" class="color-label warm-white"></label>
+          <input type="radio" id="colorOrange" name="color" value="#ffa500">
+          <label for="colorOrange" class="color-label orange"></label>
         </div>
-        <label for="fontSize">Font Size:</label>
-        <input type="number" id="fontSize" value="16">
-        <div class="color-buttons">
-            <button class="color-button" data-color="#FF0000">Red</button>
-            <button class="color-button" data-color="#00FF00">Green</button>
-            <button class="color-button" data-color="#0000FF">Blue</button>
-            <button class="color-button" data-color="#87CEEB">Sky Blue</button>
-            <button class="color-button" data-color="#FF69B4">Pink</button>
-            <button class="color-button" data-color="#FFFFFF">White</button>
-            <button class="color-button" data-color="#FDF5E6">Warm White</button>
-            <button class="color-button" data-color="#FFD700">Golden Yellow</button>
-            <button class="color-button" data-color="#FFA500">Orange</button>
+      </div>
+      <div class="option">
+        <label>Arrangement:</label>
+        <select id="arrangement">
+          <option value="1">1 Line</option>
+          <option value="2">2 Lines</option>
+          <option value="3">3 Lines</option>
+          <option value="4">4 Lines</option>
+          <option value="5">5 Lines</option>
+        </select>
+      </div>
+      <div class="option">
+        <label>Alignment:</label>
+        <div class="alignment-options">
+          <input type="radio" id="alignLeft" name="alignment" value="left" checked>
+          <label for="alignLeft">Left</label>
+          <input type="radio" id="alignCenter" name="alignment" value="center">
+          <label for="alignCenter">Center</label>
+          <input type="radio" id="alignRight" name="alignment" value="right">
+          <label for="alignRight">Right</label>
         </div>
+      </div>
     </div>
-    <div id="preview" class="preview">Your Text Here</div>
-    <script src="script.js"></script>
+    <div class="preview">
+      <div id="neonText"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
