@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Previewer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Font Previewer</h1>
+        <textarea id="inputText" placeholder="Enter your text here..."></textarea>
+        <div class="controls">
+            <label for="fontSelect">Choose Font:</label>
+            <select id="fontSelect">
+                <option value="font1">Font 1</option>
+                <option value="font2">Font 2</option>
+                <option value="font3">Font 3</option>
+            </select>
+            <label for="fontSize">Font Size:</label>
+            <input type="number" id="fontSize" value="16">
+            <label for="fontColor">Font Color:</label>
+            <input type="color" id="fontColor" value="#000000">
+        </div>
+        <div id="preview" class="preview"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
