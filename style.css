@@ -1,75 +1,71 @@
-@font-face {
-    font-family: 'F1';
-    src: url('F1.otf') format('opentype');
-}
-@font-face {
-    font-family: 'F2';
-    src: url('F2.ttf') format('truetype');
-}
-@font-face {
-    font-family: 'F3';
-    src: url('F3.otf') format('opentype');
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  color: #fff;
+  font-family: Arial, sans-serif;
 }
 
-/* Define @font-face for other fonts */
-
-.controls {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: flex-start;
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-.font-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 
-.font-button {
-    padding: 5px 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #fff;
-    cursor: pointer;
+.option {
+  margin-bottom: 10px;
 }
 
-.color-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
+.color-options {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.color-button {
-    padding: 5px 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+.color-label {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  margin-right: 10px;
+  cursor: pointer;
 }
+
+.blue { background-color: #0000ff; }
+.red { background-color: #ff0000; }
+.sky-blue { background-color: #87ceeb; }
+.green { background-color: #008000; }
+.pink { background-color: #ffc0cb; }
+.yellow { background-color: #ffff00; }
+.golden-yellow { background-color: #ffdf00; }
+.white { background-color: #ffffff; }
+.warm-white { background-color: #fff1e0; }
+.orange { background-color: #ffa500; }
 
 .preview {
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #000;
-    min-height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    width: 100%;
-    font-size: 16px;
-    color: #FF0000; /* Default neon color */
-    text-shadow: 0 0 10px #FF0000; /* Neon glow effect */
+  width: 100%;
+  height: 300px;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-@media screen and (max-width: 768px) {
-    .controls {
-        align-items: center;
-    }
-    
-    .font-buttons,
-    .color-buttons {
-        justify-content: center;
-    }
+#neonText {
+  text-align: left;
+  white-space: pre-wrap;
+}
+
+@media (max-width: 600px) {
+  .options {
+    flex-direction: column;
+  }
 }
