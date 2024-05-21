@@ -2,14 +2,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const inputText = document.getElementById('inputText');
     const fontButtons = document.querySelectorAll('.font-button');
     const fontSize = document.getElementById('fontSize');
-    const fontColor = document.getElementById('fontColor');
+    const colorButtons = document.querySelectorAll('.color-button');
     const preview = document.getElementById('preview');
 
-    const updatePreview = (font) => {
+    const updatePreview = () => {
         preview.textContent = inputText.value || "Your Text Here";
-        preview.style.fontFamily = font;
         preview.style.fontSize = `${fontSize.value}px`;
-        preview.style.color = fontColor.value;
     };
 
     fontButtons.forEach(button => {
@@ -19,9 +17,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    inputText.addEventListener('input', () => updatePreview());
-    fontSize.addEventListener('input', () => updatePreview());
-    fontColor.addEventListener('input', () => updatePreview());
+    colorButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const selectedColor = button.dataset.color;
+            preview.style.color = selectedColor;
+            preview.style.textShadow = `0 0 10px ${selectedColor}`; // Neon glow effect
+        });
+    });
+
+    inputText.addEventListener('input', updatePreview);
+    fontSize.addEventListener('input', updatePreview);
 
     updatePreview();  // Initialize preview with default values
 });
