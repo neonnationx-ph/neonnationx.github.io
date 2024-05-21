@@ -48,7 +48,7 @@ function updatePreview() {
     const span = document.createElement('span');
     span.textContent = input.value || '';
     span.style.fontFamily = font;
-    span.style.fontSize = size;
+    span.style.fontSize = size + "px";
     span.style.color = color;
     span.style.textShadow = `0 0 10px ${color}, 0 0 20px ${color}, 0 0 30px ${color}, 0 0 40px ${color}, 0 0 70px ${color}, 0 0 80px ${color}, 0 0 100px ${color}`;
     span.style.display = 'block';
