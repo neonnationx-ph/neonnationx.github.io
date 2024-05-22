@@ -1,69 +1,65 @@
-const fontSelect = document.getElementById('font');
-const sizeSelect = document.getElementById('size');
-const colorRadios = document.querySelectorAll('input[name="color"]');
-const arrangementSelect = document.getElementById('arrangement');
-const alignmentRadios = document.querySelectorAll('input[name="alignment"]');
-const neonText = document.getElementById('neonText');
-const textInputsContainer = document.getElementById('textInputs');
+document.addEventListener("DOMContentLoaded", function () {
+  const textInputsContainer = document.getElementById('textInputs');
+  const fontSelect = document.getElementById('font');
+  const sizeSelect = document.getElementById('size');
+  const lineHeightSlider = document.getElementById('lineHeight');
+  const colorRadios = document.querySelectorAll('input[name="color"]');
+  const arrangementSelect = document.getElementById('arrangement');
+  const alignmentRadios = document.querySelectorAll('input[name="alignment"]');
+  const neonText = document.getElementById('neonText');
 
-let textInputs = [];
+  function updatePreview() {
+    const font = fontSelect.value;
+    const size = sizeSelect.value;
+    const lineHeight = lineHeightSlider.value;
+    const color = document.querySelector('input[name="color"]:checked').value;
+    const alignment = document.querySelector('input[name="alignment"]:checked').value;
+    const lines = parseInt(arrangementSelect.value, 10);
 
-arrangementSelect.addEventListener('change', updateTextInputs);
-fontSelect.addEventListener('change', updatePreview);
-sizeSelect.addEventListener('change', updatePreview);
-colorRadios.forEach(radio => radio.addEventListener('change', updatePreview));
-alignmentRadios.forEach(radio => radio.addEventListener('change', updatePreview));
+    neonText.style.fontFamily = font;
+    neonText.style.fontSize = `${size}px`;
+    neonText.style.lineHeight = lineHeight;
+    neonText.style.color = 'rgb(255, 255, 255)';
+    neonText.style.textAlign = alignment;
 
-function updateTextInputs() {
-  const arrangement = parseInt(arrangementSelect.value);
-  clearTextInputs();
+    const texts = Array.from(textInputsContainer.querySelectorAll('input')).map(input => input.value);
+    neonText.innerHTML = texts.slice(0, lines).join('<br>');
 
-  for (let i = 0; i < arrangement; i++) {
-    const input = document.createElement('input');
-    input.type = 'text';
-    input.placeholder = `Line ${i + 1}`;
-    input.addEventListener('input', updatePreview);
-    textInputsContainer.appendChild(input);
-    textInputs.push(input);
+    // Apply the neon glow effect based on the selected color
+    neonText.style.textShadow = `
+      0 0 5px ${color},
+      0 0 10px ${color},
+      0 0 20px ${color},
+      0 0 40px ${color},
+      0 0 80px ${color},
+      0 0 90px ${color},
+      0 0 100px ${color},
+      0 0 150px ${color}
+    `;
   }
 
-  updatePreview();
-}
+  function createTextInputs(lines) {
+    textInputsContainer.innerHTML = '';
+    for (let i = 0; i < lines; i++) {
+      const input = document.createElement('input');
+      input.type = 'text';
+      input.placeholder = `Line ${i + 1}`;
+      input.addEventListener('input', updatePreview);
+      textInputsContainer.appendChild(input);
+    }
+  }
 
-function clearTextInputs() {
-  textInputsContainer.innerHTML = '';
-  textInputs = [];
-}
-
-function updatePreview() {
-  const font = fontSelect.value;
-  const size = `${sizeSelect.value}`;
-  const color = getSelectedColor();
-  const alignment = getSelectedAlignment();
-
-  neonText.innerHTML = '';
-  neonText.style.textAlign = alignment;
-
-  textInputs.forEach((input, index) => {
-    const span = document.createElement('span');
-    span.textContent = input.value || '';
-    span.style.fontFamily = font;
-    span.style.fontSize = size + 'px';
-    span.style.color = '#ffffff';
-    span.style.textShadow = `0 0 10px ${color}, 0 0 20px ${color}, 0 0 30px ${color}, 0 0 40px ${color}, 0 0 70px ${color}, 0 0 80px ${color}, 0 0 100px ${color}`;
-    span.style.display = 'block';
-    neonText.appendChild(span);
+  fontSelect.addEventListener('change', updatePreview);
+  sizeSelect.addEventListener('change', updatePreview);
+  lineHeightSlider.addEventListener('input', updatePreview);
+  colorRadios.forEach(radio => radio.addEventListener('change', updatePreview));
+  arrangementSelect.addEventListener('change', () => {
+    createTextInputs(arrangementSelect.value);
+    updatePreview();
   });
-}
+  alignmentRadios.forEach(radio => radio.addEventListener('change', updatePreview));
 
-function getSelectedColor() {
-  const selectedColor = document.querySelector('input[name="color"]:checked');
-  return selectedColor ? selectedColor.value : '#ff0000';
-}
-
-function getSelectedAlignment() {
-  const selectedAlignment = document.querySelector('input[name="alignment"]:checked');
-  return selectedAlignment ? selectedAlignment.value : 'left';
-}
-
-updateTextInputs();
+  // Initialize the inputs and preview
+  createTextInputs(arrangementSelect.value);
+  updatePreview();
+});
