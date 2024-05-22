@@ -1,7 +1,9 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #000;
+  background-image: radial-gradient(#686868 0.5px, transparent 0.5px);
+  background-size: 10px 10px;
+  background-color: #000000;
   color: #fff;
   font-family: Arial, sans-serif;
 }
@@ -26,7 +28,7 @@ body {
   src: url('F4.ttf'); 
 }
 
-@font-face {
+@font-face {s
   font-family: 'F5'; 
   src: url('F5.otf'); 
 }
@@ -47,7 +49,6 @@ body {
 
 h1 {
   text-align: center;
-  margin-bottom: 20px;
 }
 
 .options {
