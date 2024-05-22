@@ -28,7 +28,7 @@ body {
   src: url('F4.ttf'); 
 }
 
-@font-face {s
+@font-face {
   font-family: 'F5'; 
   src: url('F5.otf'); 
 }
@@ -39,6 +39,50 @@ body {
 @font-face {
   font-family: 'F7'; 
   src: url('F7.otf'); 
+}
+@font-face {
+  font-family: 'F8'; 
+  src: url('F8.ttf'); 
+}
+@font-face {
+  font-family: 'F9'; 
+  src: url('F9.ttf'); 
+}
+@font-face {
+  font-family: 'F10'; 
+  src: url('F10.ttf'); 
+}
+@font-face {
+  font-family: 'F11'; 
+  src: url('F11.otf'); 
+}
+@font-face {
+  font-family: 'F12'; 
+  src: url('F12.ttf'); 
+}
+@font-face {
+  font-family: 'F13'; 
+  src: url('F13.ttf'); 
+}
+@font-face {
+  font-family: 'F14'; 
+  src: url('F14.otf'); 
+}
+@font-face {
+  font-family: 'F15'; 
+  src: url('F15.ttf'); 
+}
+@font-face {
+  font-family: 'F16'; 
+  src: url('F16.otf'); 
+}
+@font-face {
+  font-family: 'F17'; 
+  src: url('F17.otf'); 
+}
+@font-face {
+  font-family: 'F18'; 
+  src: url('F18.otf'); 
 }
 
 .container {
