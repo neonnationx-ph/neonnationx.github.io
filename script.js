@@ -49,7 +49,7 @@ function updatePreview() {
     span.textContent = input.value || '';
     span.style.fontFamily = font;
     span.style.fontSize = size + 'px';
-    span.style.color = rgb(255, 255, 255);
+    span.style.color = '#ffffff';
     span.style.textShadow = `0 0 10px ${color}, 0 0 20px ${color}, 0 0 30px ${color}, 0 0 40px ${color}, 0 0 70px ${color}, 0 0 80px ${color}, 0 0 100px ${color}`;
     span.style.display = 'block';
     neonText.appendChild(span);
