@@ -7,8 +7,36 @@ body {
 }
 
 @font-face {
-    font-family: 'F1'; /*a name to be used later*/
-    src: url('F1.otf'); /*URL to font*/
+    font-family: 'F1'; 
+    src: url('F1.otf'); 
+}
+
+@font-face {
+    font-family: 'F2'; 
+    src: url('F2.ttf');ss 
+}
+
+@font-face {
+    font-family: 'F3'; 
+    src: url('F3.otf'); 
+}
+
+@font-face {
+    font-family: 'F4'; 
+    src: url('F4.ttf'); 
+}
+
+@font-face {
+    font-family: 'F5'; 
+    src: url('F5.otf'); 
+}
+@font-face {
+    font-family: 'F6'; 
+    src: url('F6.otf'); 
+}
+@font-face {
+    font-family: 'F7'; 
+    src: url('F7.otf'); 
 }
 
 .container {
