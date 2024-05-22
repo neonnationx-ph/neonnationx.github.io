@@ -6,6 +6,11 @@ body {
   font-family: Arial, sans-serif;
 }
 
+@font-face {
+    font-family: 'F1'; /*a name to be used later*/
+    src: url('F1.otf'); /*URL to font*/
+}
+
 .container {
   max-width: 800px;
   margin: 0 auto;
